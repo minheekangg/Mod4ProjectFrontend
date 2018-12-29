@@ -82,7 +82,7 @@ const PlaySound = props => {
   }
   return (
 
-    <Button onClick={()=>handleClickSound(props)}><Icon name='play' size='big'/></Button>
+    <Button onClick={()=>handleClickSound(props)}><Icon name='volume up' size='big'/></Button>
   )
 }
 

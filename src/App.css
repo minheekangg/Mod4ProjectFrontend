@@ -18,50 +18,44 @@
   justify-content: center;
   font-size: calc(13px + 2vmin);
   padding-top: 2vh;
-  min-height: 8vh;
+  height: 8vh;
   min-width: 100vh;
-  color: pink;
+  color: navy;
   font-family: "Arial Black", Gadget, sans-serif;
 }
 
 .App-link {
 }
 
-/* .clipboardImg{
-  background-image: url("https://www.computerhope.com/jargon/c/clipboard.jpg");
-  background-repeat: no-repeat;
-  background-size: 60%;
-  background-position: center;
-} */
 .column {
   text-align: center;
-  /* background-color: pink; */
-  min-height: 30vh;
+  background-color: pink;
+  height: 80vh;
   width: 50%;
   float: left;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10vh;
+  padding: 8vh;
   background-image: url("http://www.clker.com/cliparts/9/9/7/2/11949837802045456413clipboard_01.svg.hi.png");
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: 55vh;
   background-position: center;
 }
 
 .Right-column {
   /* color: #61dafb; */
   text-align: center;
-  /* background-color: pink; */
-  min-height: 80vh;
+  background-color: green;
+  height: 80vh;
   width: 50%;
-  float: right;
+  /* float: right; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-right: 15vh;
+  padding-right: 8vh;
 }
 .content-grid{
   width: 100%;
@@ -73,4 +67,28 @@
   max-height: 20vh;
   border-radius: 30%;
   /* size: 110%; */
+}
+
+
+
+.end-game-div {
+  /* border: 1px solid #000; */
+  position: relative;
+}
+
+.end-game-background {
+  height: 65vh;
+  /* border: 1px solid #f00; */
+  position: relative;
+  z-index: 1;
+}
+
+.end-game-sticker {
+  /* border: 1px solid #0f0; */
+  max-height: 15vh;
+  position: absolute;
+  z-index: 1;
+  top: 45vh;
+  left: 80vh;
+  border-radius: 50%;
 }

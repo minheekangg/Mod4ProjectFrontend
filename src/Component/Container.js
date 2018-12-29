@@ -1,8 +1,10 @@
 import React from 'react'
+import '../App.css';
+
 import WordContainer from './WordContainer'
 import Letter from './Letter'
-import '../App.css';
 import Game from './Game'
+import EndGame from './EndGame'
 
 
 export default class Container extends React.Component {
@@ -40,10 +42,6 @@ export default class Container extends React.Component {
   }
 
   handleClick = (e, props) => {
-    if (props.letter_id === this.state.currLetter.id && this.state.currentIndex === 13) {
-      alert("YOU DID IT!")
-      this.resetGame()
-    }
     if (props.letter_id === this.state.currLetter.id) {
       this.setState({points: (this.state.points+1), currentIndex:(this.state.currentIndex+1)}, () =>{
         let letter= this.props.letters[this.state.currentIndex]
@@ -57,20 +55,36 @@ export default class Container extends React.Component {
     }
   }
 
+
+  handlePlayAgain = () => {
+    this.resetGame()
+  }
+
+  displayGame = () => {
+    const currL = this.state.currLetter
+    const currWs = this.state.currWords
+    if (currL.id > 0 && currL.id < 15) {
+      return (<div>
+              <div className="column">
+                <Letter name={currL.name} image={currL.image} sound={currL.sound} id={currL.id}/>
+              </div>
+              <div className="Right-column">
+                {currWs.length > 0 && currL.id < 15 ? <WordContainer words={currWs} handleClick={this.handleClick}/> : null}
+              </div>
+        </div>)
+    } else if (currL.id === 15) {
+      return <EndGame name={currL.name} image={currL.image} id={currL.id} handlePlayAgain={this.handlePlayAgain} />
+    } else {
+      return <div>Loading...</div>
+    }
+  }
+
   render(){
-  const currL = this.state.currLetter
-  const currWs = this.state.currWords
-  // console.log(currWs.length);
     return(
       <>
       <Game points={this.state.points}/>
         <div className="content-grid">
-          <div className="column">
-            {currL.id > 0? <Letter name={currL.name} image={currL.image} sound={currL.sound} id={currL.id}/> : null}
-          </div>
-          <div className="Right-column">
-            {currWs.length > 0? <WordContainer words={currWs} handleClick={this.handleClick}/> : null}
-          </div>
+        { this.displayGame() }
         </div>
       </>
     )
