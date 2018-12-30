@@ -84,7 +84,7 @@ export default class Container extends React.Component {
       <>
       <Game points={this.state.points}/>
         <div className="content-grid">
-        { this.displayGame() }
+        { this.displayGame()  }
         </div>
       </>
     )

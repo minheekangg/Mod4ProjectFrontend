@@ -18,7 +18,7 @@ export default class WordContainer extends React.Component{
     const shuffledWords = this.shuffle(this.props.words)
     // console.log("INSIDE WORDS CONTAINER PROPS ARE", this.props, shuffledWords)
     return shuffledWords.map((w)=> {
-      return <Word key={w.name} image={w.image} name={w.name} handleClick={this.props.handleClick} letter_id={w.letter_id}/>
+      return <Word key={w.name} image={w.image} name={w.name} id={w.id} handleClick={this.props.handleClick} letter_id={w.letter_id}/>
     })
   }
 
