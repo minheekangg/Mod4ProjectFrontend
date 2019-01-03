@@ -16,7 +16,6 @@ const NavBar = props => {
   return (
     <div>
     <NavLink to="/" exact style={link} activeStyle={{ background: 'grey'}}>Home</NavLink>
-
     <NavLink to="/login" exact style={link} activeStyle={{ background: 'grey' }}>Login</NavLink>
 
         <div className="icon-header" style={{link}} >

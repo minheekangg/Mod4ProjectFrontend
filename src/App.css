@@ -105,6 +105,7 @@
   z-index: 1;
 }
 
+
 .form-div{
   justify-content: center;
   text-align: center;
@@ -124,4 +125,20 @@
   background-color: 'lavender';
   textDecoration: 'none';
   color: 'white';
+}
+
+.chart-block {
+  color: white;
+  opacity: 0.5;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.chart-text {
+  position: absolute;
+}
+
+.chart-container {
+  width:500px;
 }

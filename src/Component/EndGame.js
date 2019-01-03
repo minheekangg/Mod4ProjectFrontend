@@ -9,6 +9,7 @@ const EndGame = (props) => {
     <img className="end-game-sticker"src={props.image} alt={props.name}/>
     <br  />
     <Button style={{size: "30vh", color: "green"}} onClick={props.handlePlayAgain}> <Icon name="play circle"/> Play again! </Button>
+    <Button style={{size: "30vh", color: "blue"}} onClick={props.handleHighScores}> <Icon name="chart bar"/> My High Scores </Button>
     </div>)
 }
 
