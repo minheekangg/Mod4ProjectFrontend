@@ -1,5 +1,7 @@
 import React from 'react'
 import '../App.css';
+import swal from 'sweetalert';
+
 
 import WordContainer from './WordContainer'
 import Letter from './Letter'
@@ -12,15 +14,15 @@ export default class Container extends React.Component {
     currentIndex: 0,
     currLetter: "",
     currWords: [],
-    points: 0
+    points: 0,
+    username: "",
+    userId: 0
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.letters.length !== prevProps.letters.length){
-      let letter= this.props.letters[this.state.currentIndex] // ASSIGNS CURRENT LETTER
-      this.setState({ currLetter: letter}, () => {console.log("state updated to:", this.state)})
-    } else if (this.props.words.length !== prevProps.words.length) {
-      this.createWordsArray()
+    if (this.props.username !== prevProps.username) {
+        let letter= this.props.letters[this.state.currentIndex] // ASSIGNS CURRENT LETTER
+        this.setState({ currLetter: letter, username: this.props.username, userId: this.props.userId}, () => {this.createWordsArray()})
     }
   }
 
@@ -50,7 +52,15 @@ export default class Container extends React.Component {
         })
       })
     } else {
-      alert("Oh no! Wrong answer!")
+      swal("Oh no!", "Try Again from the beginning!", "error");
+      fetch(`http://localhost:3000/api/v1/games/${this.state.userId}`, {
+        method: 'PATCH',
+        headers: {
+          "Content-type": "Application/json",
+          "Accept": "Application/json"
+        },
+        body: JSON.stringify({score: `${this.state.points}`})
+      })
       this.resetGame()
     }
   }
@@ -61,6 +71,7 @@ export default class Container extends React.Component {
   }
 
   displayGame = () => {
+
     const currL = this.state.currLetter
     const currWs = this.state.currWords
     if (currL.id > 0 && currL.id < 15) {

@@ -7,7 +7,7 @@ class Game extends React.Component{
 
   render(){
     let percentage = Math.round(((this.props.points)/14)*100)
-    // console.log("POINTS ARE:", this.props.points, percentage);
+  
     return(
     <>
       <div className="App-header"> Your Progress:

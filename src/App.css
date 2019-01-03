@@ -92,3 +92,36 @@
   left: 80vh;
   border-radius: 50%;
 }
+
+
+.login-background {
+  background-image: url("http://www.hyundaenews.com/imgdata/hyundaenews_com/201810/2018100831141556.jpg");
+  background-repeat: no-repeat;
+  background-size: 150vh;
+  background-position: bottom;
+  height: 100vh;
+  /* border: 1px solid #f00; */
+  position: relative;
+  z-index: 1;
+}
+
+.form-div{
+  justify-content: center;
+  text-align: center;
+  width: 80vh;
+  left: 20%;
+  /* border: 1px solid #0f0; */
+  position: absolute;
+  z-index: 1;
+  top: 10vh;
+  align-items: center;
+}
+
+.icon-header{
+  padding: '20px';
+  float: right;
+  margin-right: 2vh;
+  background-color: 'lavender';
+  textDecoration: 'none';
+  color: 'white';
+}
