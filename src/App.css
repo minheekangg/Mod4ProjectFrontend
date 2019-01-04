@@ -142,3 +142,13 @@
 .chart-container {
   width:500px;
 }
+
+.pop-up-div{
+   color: white;
+  opacity: 0.2;
+  height: 100%;
+  width: 100%;
+  top: 40vh;
+  left: 10vh;
+  position: absolute;
+}
