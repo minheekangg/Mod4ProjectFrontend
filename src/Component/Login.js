@@ -41,7 +41,7 @@ render(){
           <Button value="Login"> Login </Button>
         </Form>
       <div className="pop-up-div">
-        <Popup trigger={<Button icon="add" />} header="King Sejong" content="The modern name for the Korean alphabet is Hangeul (or Hangul). King Sejong the Great is a celebrated Korean ruler who invented the alphabet. "
+        <Popup trigger={<Button icon="add" />} header="King Sejong the Great" content="The modern name for the Korean alphabet is Hangeul (or Hangul). King Sejong is a celebrated Korean ruler who invented the alphabet. "
           horizontalOffset={50}
           position='right center' />
       </div>
